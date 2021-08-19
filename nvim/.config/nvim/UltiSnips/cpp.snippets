@@ -1,0 +1,32 @@
+snippet boi "Boilerplate CPP code" b
+#include <iostream>
+
+int main() {
+	$1
+
+	std::cin.get();
+	std::cin.get();
+	return 0;
+}
+endsnippet
+
+snippet boi2 "Boilerplate CPP code 2" b
+#include <iostream>
+using namespace std;
+
+int main() {
+	$1
+
+	cin.get();
+	cin.get();
+	return 0;
+}
+endsnippet
+
+snippet outq "std::cout with quotes" i
+std::cout << "$1\n";
+endsnippet
+
+snippet outwq "std::cout without quotes" i
+std::cout << $1 << "\n";
+endsnippet

@@ -1,0 +1,103 @@
+# ~/.config/starship.toml
+
+# Use custom format
+format = """
+[┌─╸](bold dimmed cyan)[\\[](bold red) $username[@](bold green)$hostname [\\]](bold red)$cmd_duration
+[├─╸](bold dimmed cyan)[\\[](bold red)$directory[\\]](bold red) $git_branch $git_commit $git_state $git_status
+[└─╸](bold dimmed cyan)$character"""
+
+
+
+# $cmd_duration
+# [┌─╸](bold fg:#4c566a)\\[$username$hostname\\] [╾─╸](bold fg:#4c566a) \\[ $time\\]
+# [└─╸](bold fg:#4c566a)\\[$directory\\] $git_branch $git_commit $git_state $git_status
+#  $character"""
+
+# [┌─────────────────>](bold blue)$directory $git_branch $git_commit $git_state $git_status
+# [└─](bold blue)\\[$username$hostname\\]$character"""
+# # format = """
+# $git_branch $git_commit $git_state $git_status
+# [┌───────────────────>](bold blue)$directory
+# [│](bold blue) $git_branch $git_commit $git_state $git_status
+# [└─](bold blue)$username$hostname $character"""
+
+
+[cmd_duration]
+min_time = 10
+format = " [╾─╸](bold dimmed cyan) [\\[](bold red)祥 [$duration](bold white)[\\]](bold red)"
+disabled = false
+
+[package]
+disabled = true
+
+add_newline = false
+
+[line_break]
+disabled = false
+
+[character]
+# use_symbol_for_status = true
+# success_symbol = "➜(bold green)"
+success_symbol = "❯(bold green)"
+error_symbol = "✗(bold red)"
+
+
+[directory]
+truncation_length = 5
+format = " [$path]($style)[$lock_symbol]($lock_style) "
+style = "bold purple"
+# home_symbol = ""
+
+# [git_branch]
+# format = " [$symbol$branch]($style) "
+# # symbol = "🍣 "
+# style = "bold yellow"
+
+# [git_commit]
+# commit_hash_length = 8
+# style = "bold white"
+
+# [git_state]
+# format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+# [git_status]
+# conflicted = "⚔️ "
+# ahead = "🏎️ 💨 ×${count}"
+# behind = "🐢 ×${count}"
+# diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+# untracked = "🛤️  ×${count}"
+# stashed = "📦 "
+# modified = "📝 ×${count}"
+# staged = "🗃️  ×${count}"
+# renamed = "📛 ×${count}"
+# deleted = "🗑️  ×${count}"
+# style = "bright-white"
+# format = "$all_status$ahead_behind"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "bold blue"
+disabled = false
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
+
+[nodejs]
+disabled = true
+
+[time]
+# time_format = "%T"
+# use_12hr = true
+format = "$time($style) "
+style = "bright-white"
+disabled = false
+
+[username]
+format = "[$user]($style)"
+style_root = "black bold"
+style_user = "bold yellow"
+show_always = true

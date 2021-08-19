@@ -1,0 +1,219 @@
+#Normal keys
+super + r
+		$TERMINAL -e lfrun
+
+super + shift + r
+		$TERMINAL -e gotop
+
+super + n
+		$TERMINAL -e nvim -c VimwikiIndex
+
+super + shift + n
+		$TERMINAL -e newsboat
+
+super + d
+		dmenu_run -l 25
+
+super + shift + m
+		pamixer -t; kill -44 $(pidof dwmblocks)
+
+super + m
+		spotify
+
+super + shift + s
+		maimpick
+
+super + shift + d
+		keepassxc
+
+# super + w
+# 		dmenuchromium
+
+# Chromium and transmission-remote-gtk
+super + w; {d, f, g, m, t}
+		{chromium --profile-directory="Default",chromium --profile-directory="Profile 2",chromium --profile-directory="Profile 1",chromium --profile-directory="Profile 3",transmission-remote-gtk}
+
+super + p
+		clipmenu
+
+super + e
+		ytfzf -Dl
+
+super + shift + e
+		yts.sh -r
+
+super + shift + w
+		$TERMINAL -e sudo nmtui
+
+super + BackSpace
+		sysact
+
+super + shift + apostrophe
+		dmenuunicode
+
+super + Insert
+		xdotool type $(cat ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)
+
+super + minus
+		pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+
+super + underscore
+		pamixer --allow-boost -d 15; kill -44 $(pidof dwmblocks)
+
+super + equal
+		pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)
+
+super + plus
+		pamixer --allow-boost -i 15; kill -44 $(pidof dwmblocks)
+
+
+# mpv
+super + shift + p
+		mpc pause; pauseallmpv
+
+super + 0
+		mpc seek -10
+
+super + 9
+		mpc seek +10
+
+super + parenright
+		mpc seek +60
+
+super + parenleft
+		mpc seek -60
+
+super + comma
+		mpc prev
+
+super + shift + comma
+		mpc seek 0%
+
+super + period
+		mpc next
+
+super + shift + period
+		mpc repeat
+
+super + Print
+        dmenurecord
+
+super + shift + Print
+        dmenurecord kill
+
+super + Delete
+        dmenurecord kill
+
+# super + ScrollLock
+#         killall screenkey || screenkey &
+
+#XF86 Keys
+XF86AudioMute
+		pamixer -t; kill -44 $(pidof dwmblocks)
+
+XF86AudioRaiseVolume
+		pamixer --allow-boost -i 3; kill -44 $(pidof dwmblocks)
+
+XF86AudioLowerVolume
+		pamixer --allow-boost -d 3; kill -44 $(pidof dwmblocks)
+
+XF86MonBrightnessUp
+		sudo brillo -A 2 && brightnessNotify
+
+XF86MonBrightnessDown
+		sudo brillo -U 2 && brightnessNotify
+
+XF86TouchpadToggle
+		TouchpadToggle
+
+XF86AudioPrev
+        mpc prev
+
+XF86AudioNext
+        mpc next
+
+XF86AudioPause
+        mpc pause
+
+XF86AudioPlay
+        mpc play
+
+XF86AudioStop
+        mpc stop
+
+XF86AudioRewind
+        mpc seek -10
+
+XF86AudioForward
+        mpc seek +10
+
+XF86AudioMedia
+        $TERMINAL -e ncmpcpp
+
+XF86AudioMicMute
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+XF86PowerOff
+        sysact
+
+XF86Sleep
+        sudo -A zzz
+
+XF86WWW
+        $BROWSER
+
+XF86DOS
+        $TERMINAL
+
+XF86Calculator
+        $TERMINAL -e bc -l
+
+XF86ScreenSaver
+        slock & xset dpms force off; mpc pause; pauseallmpv
+
+XF86TaskPane
+        $TERMINAL -e htop
+
+XF86MyComputer
+        $TERMINAL -e lfrun
+
+XF86Launch1
+        xset dpms force off
+
+XF86Mail
+         chromium --profile-directory="Profile 1" https://mail.google.com/mail/u/0/#inbox
+
+
+#Function keys
+super + F1
+		groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura
+
+super + F2
+		tutorialvids
+
+super + F3
+		displayselect
+
+super + F4
+		$TERMINAL -e pulsemixer; kill -44 $(pidof dwmblocks)
+
+super + F6
+		torwrap
+
+super + F7
+		td-toggle
+
+super + F8
+		mw -Y
+
+super + F9
+		dmenumount
+
+super + F10
+		dmenuumount
+
+super + F11
+		mpv --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)
+
+super + F12
+		remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"
