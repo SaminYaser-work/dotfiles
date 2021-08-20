@@ -2,9 +2,9 @@
 
 # Use custom format
 format = """
-[┌─╸](bold dimmed cyan)[\\[](bold red) $username[@](bold green)$hostname [\\]](bold red)$cmd_duration
-[├─╸](bold dimmed cyan)[\\[](bold red)$directory[\\]](bold red) $git_branch $git_commit $git_state $git_status
-[└─╸](bold dimmed cyan)$character"""
+[┌─╸](dimmed #ebdbb2)[\\[](bold red) $username[@](bold underline bright-green)$hostname [\\]](bold red)$cmd_duration
+[├─╸](dimmed #ebdbb2)[\\[](bold red)$directory[\\]](bold red) $git_branch $git_commit $git_state $git_status
+[└─╸](dimmed #ebdbb2)$character"""
 
 
 
@@ -12,7 +12,6 @@ format = """
 # [┌─╸](bold fg:#4c566a)\\[$username$hostname\\] [╾─╸](bold fg:#4c566a) \\[ $time\\]
 # [└─╸](bold fg:#4c566a)\\[$directory\\] $git_branch $git_commit $git_state $git_status
 #  $character"""
-
 # [┌─────────────────>](bold blue)$directory $git_branch $git_commit $git_state $git_status
 # [└─](bold blue)\\[$username$hostname\\]$character"""
 # # format = """
@@ -24,7 +23,7 @@ format = """
 
 [cmd_duration]
 min_time = 10
-format = " [╾─╸](bold dimmed cyan) [\\[](bold red)祥 [$duration](bold white)[\\]](bold red)"
+format = " [╾─╸](dimmed #ebdbb2) [\\[](bold red) [祥](bold white)[$duration](bold white) [\\]](bold red)"
 disabled = false
 
 [package]
@@ -77,7 +76,7 @@ style = "bold purple"
 [hostname]
 ssh_only = false
 format = "[$hostname]($style)"
-style = "bold blue"
+style = "bold underline bright-blue"
 disabled = false
 
 [memory_usage]
@@ -99,5 +98,5 @@ disabled = false
 [username]
 format = "[$user]($style)"
 style_root = "black bold"
-style_user = "bold yellow"
+style_user = "bold underline bright-yellow"
 show_always = true
