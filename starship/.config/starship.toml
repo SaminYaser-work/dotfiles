@@ -2,7 +2,7 @@
 
 # Use custom format
 format = """
-[┌─╸](dimmed #ebdbb2)[\\[](bold red) $username[@](bold underline bright-green)$hostname [\\]](bold red)$cmd_duration
+[┌─╸](dimmed #ebdbb2)[\\[](bold red) $username[@](bold bright-green)$hostname [\\]](bold red)$cmd_duration
 [├─╸](dimmed #ebdbb2)[\\[](bold red)$directory[\\]](bold red) $git_branch $git_commit $git_state $git_status
 [└─╸](dimmed #ebdbb2)$character"""
 
@@ -76,7 +76,7 @@ style = "bold purple"
 [hostname]
 ssh_only = false
 format = "[$hostname]($style)"
-style = "bold underline bright-blue"
+style = "bold bright-blue"
 disabled = false
 
 [memory_usage]
@@ -98,5 +98,5 @@ disabled = false
 [username]
 format = "[$user]($style)"
 style_root = "black bold"
-style_user = "bold underline bright-yellow"
+style_user = "bold bright-yellow"
 show_always = true
