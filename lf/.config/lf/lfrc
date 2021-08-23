@@ -112,8 +112,6 @@ map gp cd /home/sam/Pictures
 map gv cd /home/sam/Videos
 map gl cd /home/sam/Documents/Lectures/Sem\ 6
 map gL cd /home/sam/.local/
-map gwd cd /home/sam/windows/C/Documents\ and\ Settings/Asus/Documents/
-# map gb cd /home/sam/windows/C/Documents\ and\ Settings/Asus/Documents/Books
 map gs cd /home/sam/windows/D/Shared\ Files
 map gwp cd /home/sam/Documents/Projects/
 map gm cd /home/sam/windows/E/Movies

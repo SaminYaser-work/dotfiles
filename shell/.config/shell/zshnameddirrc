@@ -10,6 +10,7 @@ hash -d pp=/home/sam/Pictures
 hash -d sc=/home/sam/.local/bin 
 hash -d src=/home/sam/.local/src 
 hash -d vv=/home/sam/Videos 
+hash -d lec=/home/sam/Documents/Lectures 
 hash -d bf=/home/sam/.config/shell/bm-files 
 hash -d bd=/home/sam/.config/shell/bm-dirs 
 hash -d cfx=/home/sam/.config/x11/xresources 

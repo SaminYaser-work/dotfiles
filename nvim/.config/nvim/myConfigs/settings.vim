@@ -4,6 +4,9 @@
     set nohlsearch
     set clipboard+=unnamedplus
     set noshowmode
+    set visualbell
+    " set virtualedit=all
+    " set autoindent
     set noruler
     set laststatus=0
     set noshowcmd

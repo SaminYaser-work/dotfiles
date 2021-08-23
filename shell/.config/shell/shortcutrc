@@ -11,6 +11,7 @@ pp="cd /home/sam/Pictures && ls -a" \
 sc="cd /home/sam/.local/bin && ls -a" \
 src="cd /home/sam/.local/src && ls -a" \
 vv="cd /home/sam/Videos && ls -a" \
+lec="cd /home/sam/Documents/Lectures && ls -a" \
 bf="$EDITOR /home/sam/.config/shell/bm-files" \
 bd="$EDITOR /home/sam/.config/shell/bm-dirs" \
 cfx="$EDITOR /home/sam/.config/x11/xresources" \
