@@ -1,4 +1,4 @@
-# Luke's config for the Zoomer Shell
+# Luke's config (plus a few of my personal touches) for the Zoomer Shell
 
 # Enable colors and change prompt:
 autoload -U colors && colors # Load colors
@@ -91,12 +91,12 @@ alias c="curl 'https://corona-stats.online/Bangladesh'"
 alias w='curl wttr.in/Dhaka'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias twitch='twitch-curses'
-alias rss='vim .config/newsboat/urls'
+alias rss='vim ~/.config/newsboat/urls'
 alias mf='xinput set-prop 10 352 -0.8'
-alias cfzsh='vim .config/zsh/.zshrc'
-alias cflf='vim .config/lf/lfrc'
+alias cfzsh='vim ~/.config/zsh/.zshrc'
+alias cflf='vim ~/.config/lf/lfrc'
 alias cfdwm='vim ~/.local/src/dwm-sam/config.h'
-alias cfnv='vim .config/nvim/init.vim'
+alias cfnv='vim ~/.config/nvim/init.vim'
 alias smi='sudo make install'
 alias mkdwm='cd ~/.local/src/dwm-sam && smi && cd'
 alias up='yay -Syyu'
@@ -104,16 +104,31 @@ alias pg='ping -O 8.8.8.8'
 alias pgg='gping 8.8.8.8'
 alias tp='xinput set-prop 12 207'
 alias monf='xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-1-1 --mode 1366x768 --right-of eDP-1-1'
-alias gp='git push'
 alias qs='quickserve ~/windows/E/Movies'
 alias nf='fastfetch'
-alias ps="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+# alias ps="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias lf="lfrun"
 
+# Git related
+alias gp='git push'
+alias gs='git status'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gcam='git commit -am'
+
+
 #Functions
+
+# Shows arch repos in a nice window with fzf
+ps() {
+    pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
+}
+
+# Shows aur repos in a nice window with fzf
 ys() {
     yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}")' | xargs -ro yay -S
 }
+
 
 # fzf stuff
 source /usr/share/fzf/completion.zsh
