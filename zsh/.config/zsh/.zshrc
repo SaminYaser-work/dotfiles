@@ -1,10 +1,10 @@
 # Luke's config for the Zoomer Shell
 
 # Enable colors and change prompt:
-autoload -U colors && colors	# Load colors
+autoload -U colors && colors # Load colors
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
+setopt autocd   # Automatically cd into typed directory.
+stty stop undef # Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
 # Stop highlighting paste
@@ -25,7 +25,7 @@ autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots) # Include hidden files.
 
 # vi mode
 bindkey -v
@@ -42,10 +42,10 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Change cursor shape for different vi modes.
-function zle-keymap-select () {
+function zle-keymap-select() {
     case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
+    vicmd) echo -ne '\e[1 q' ;;        # block
+    viins | main) echo -ne '\e[5 q' ;; # beam
     esac
 }
 zle -N zle-keymap-select
@@ -54,11 +54,11 @@ zle-line-init() {
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+echo -ne '\e[5 q'                # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
 
 # Use lf to switch directories and bind it to ctrl-o
-lfcd () {
+lfcd() {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
     if [ -f "$tmp" ]; then
@@ -81,7 +81,8 @@ source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
 
 # Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
+autoload edit-command-line
+zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 #alias
@@ -111,7 +112,7 @@ alias lf="lfrun"
 
 #Functions
 ys() {
-	yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}")' | xargs -ro  yay -S
+    yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}")' | xargs -ro yay -S
 }
 
 # fzf stuff
@@ -122,7 +123,6 @@ source /usr/share/fzf/key-bindings.zsh
 eval "$(starship init zsh)"
 
 #Art
-# clear
 randomcolorscript="$(shuf -n 1 -i 0-1)"
 if [[ "$randomcolorscript" == 0 ]]; then
     colorscript -r

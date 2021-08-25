@@ -39,7 +39,7 @@
 	map <leader>c :w! \| !compiler "<c-r>%"<CR>
 
 " Open corresponding .pdf/.html or preview
-	map <leader>p :!opout <c-r>%<CR><CR>
+	map <leader><leader>p :!opout <c-r>%<CR><CR>
 
 " Navigate buffer with tab
     nnoremap <Tab> :bnext<CR>
@@ -74,3 +74,6 @@
     map j jzz
     map k kzz
     autocmd InsertEnter * norm zz
+
+" Prettier format
+    map <leader>p :PrettierAsync<CR>

@@ -5,6 +5,13 @@ let g:neoformat_cpp_clangformat = {
 \}
 let g:neoformat_enabled_cpp = ['clangformat']
 let g:neoformat_enabled_c = ['clangformat']
+let g:neoformat_enabled_csharp = ['clangformat']
+
 
 " Autoformat on save
-autocmd BufWritePre *.c,*.cpp Neoformat
+augroup fmt
+    autocmd!
+    autocmd BufWritePre *.c,*.cpp,*.cs undojoin | Neoformat
+augroup END
+
+nnoremap <leader>p :Neoformat prettier<CR>
