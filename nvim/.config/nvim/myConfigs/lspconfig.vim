@@ -16,29 +16,44 @@ nnoremap <silent> gs        <cmd>Lspsaga signature_help<CR>
 inoremap <expr> <Tab>       pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab>     pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" >> Telescope bindings
-nnoremap <Leader>te <cmd>lua require'telescope.builtin'.builtin{}<CR>
+
+
+""""""""""""""""""""""""""""""
+""""" Telescope bindings """""
+""""""""""""""""""""""""""""""
+
+" Builtin functions
+nnoremap <space>e <cmd>lua require'telescope.builtin'.builtin{}<CR>
 
 " most recently used files
-nnoremap <Leader>tr <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
+nnoremap <space>r <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
 
 " find buffer
-nnoremap <leader>tb <cmd>lua require'telescope.builtin'.buffers{}<CR>
+nnoremap <space><Tab> <cmd>lua require'telescope.builtin'.buffers{}<CR>
 
 " find in current buffer
-nnoremap <Leader>t/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
+nnoremap <space>/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
 
 " bookmarks
-nnoremap <Leader>t' <cmd>lua require'telescope.builtin'.marks{}<CR>
+nnoremap <space>' <cmd>lua require'telescope.builtin'.marks{}<CR>
 
 " git files
-nnoremap <Leader>tgf <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <space>gf <cmd>lua require'telescope.builtin'.git_files{}<CR>
 
 " all files
-nnoremap <Leader>tf <cmd>lua require'telescope.builtin'.find_files{}<CR>
+nnoremap <space>f <cmd>lua require'telescope.builtin'.find_files{}<CR>
 
 " ripgrep like grep through dir
-nnoremap <Leader>tgr <cmd>lua require'telescope.builtin'.live_grep{}<CR>
+nnoremap <space>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
+
+" Registers
+nnoremap <space>rr <cmd>lua require'telescope.builtin'.registers{}<CR>
 
 " pick color scheme
-nnoremap <Leader>tcs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
+nnoremap <space>c <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
+
+" Pick man pages
+nnoremap <space>m <cmd>lua require'telescope.builtin'.man_pages{}<CR>
+
+" Spell suggestion
+nnoremap <space>z <cmd>lua require'telescope.builtin'.spell_suggest{}<CR>
