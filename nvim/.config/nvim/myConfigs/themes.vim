@@ -7,7 +7,7 @@ set termguicolors
 
 lua <<EOF
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox8]])
+vim.cmd([[colorscheme gruvbox8_hard]])
 EOF
 
 " set cursorline

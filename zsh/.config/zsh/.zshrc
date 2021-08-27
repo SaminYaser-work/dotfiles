@@ -89,7 +89,7 @@ bindkey '^e' edit-command-line
 alias ls="exa --long --all --icons"
 alias c="curl 'https://corona-stats.online/Bangladesh'"
 alias w='curl wttr.in/Dhaka'
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+# alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias twitch='twitch-curses'
 alias rss='vim ~/.config/newsboat/urls'
 alias mf='xinput set-prop 10 352 -0.8'
@@ -106,25 +106,24 @@ alias tp='xinput set-prop 12 207'
 alias monf='xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-1-1 --mode 1366x768 --right-of eDP-1-1'
 alias qs='quickserve ~/windows/E/Movies'
 alias nf='fastfetch'
-# alias ps="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias lf="lfrun"
 
 # Git related
-alias gp='git push'
 alias gs='git status'
+alias gp='git push'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 
 
-#Functions
+# Custom Functions
 
-# Shows arch repos in a nice window with fzf
+# Shows arch packages in a nice window with fzf
 ps() {
     pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
 }
 
-# Shows aur repos in a nice window with fzf
+# Shows aur packages in a nice window with fzf
 ys() {
     yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}")' | xargs -ro yay -S
 }
