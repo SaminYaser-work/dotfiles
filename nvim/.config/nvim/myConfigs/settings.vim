@@ -46,7 +46,6 @@ vim.cmd('set clipboard+=unnamedplus')
 
 vim.o.mouse               = 'a'
 vim.o.hlsearch            = false         -- Set highlight on search
-vim.opt.undofile          = true          -- Save undo history
 vim.opt.clipboard         = 'unnamedplus' -- copy/paste to system clipboard
 vim.opt.showmatch         = true          -- highlight matching parenthesis
 -- vim.opt.colorcolumn       = '80'          -- line lenght marker at 80 columns
@@ -117,4 +116,10 @@ vim.opt.listchars     = {
 vim.opt.showbreak     = '↳ '               -- DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
 vim.g.indentLine_char = '|'       -- set indentLine character
 
+
+local home              = "/home/sam"
+local config            = home .. "/.config/nvim"
+vim.opt.undofile        = true                  -- actually use undo files
+vim.opt.undodir         = "/home/sam/.config/nvim/undo"   -- keep undo files out of the way
+vim.cmd("set undolevels=10000")
 EOF
