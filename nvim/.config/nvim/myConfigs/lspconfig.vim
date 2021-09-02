@@ -4,7 +4,7 @@ nnoremap <silent> gD        <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr        <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi        <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K         <cmd>Lspsaga hover_doc<CR>
-nnoremap <silent> <C-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> gk        <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> g[        <cmd>Lspsaga diagnostic_jump_prev<CR>
 nnoremap <silent> g]        <cmd>Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> <leader>\ <cmd>lua vim.lsp.buf.formatting()<CR>
@@ -26,7 +26,13 @@ inoremap <expr> <S-Tab>     pumvisible() ? "\<C-p>" : "\<S-Tab>"
 nnoremap <space>e <cmd>lua require'telescope.builtin'.builtin{}<CR>
 
 " most recently used files
-nnoremap <space>r <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
+nnoremap <space>rf <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
+
+" ripgrep like grep through dir
+nnoremap <space>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
+
+" Registers
+nnoremap <space>rr <cmd>lua require'telescope.builtin'.registers{}<CR>
 
 " find buffer
 nnoremap <space><Tab> <cmd>lua require'telescope.builtin'.buffers{}<CR>
@@ -42,12 +48,6 @@ nnoremap <space>gf <cmd>lua require'telescope.builtin'.git_files{}<CR>
 
 " all files
 nnoremap <space>f <cmd>lua require'telescope.builtin'.find_files{}<CR>
-
-" ripgrep like grep through dir
-nnoremap <space>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
-
-" Registers
-nnoremap <space>rr <cmd>lua require'telescope.builtin'.registers{}<CR>
 
 " pick color scheme
 nnoremap <space>c <cmd>lua require'telescope.builtin'.colorscheme{}<CR>

@@ -62,8 +62,8 @@
     map <leader>x :bd<CR>
 
 " Move highlighted text
-    vnoremap <C-j> :m '>+1<CR>gv=gv
-    vnoremap <C-k> :m '<-2<CR>gv=gv
+    " vnoremap <A-j> :m '>+1<CR>gv=gv
+    " vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Search next/prev is centered
     nnoremap n nzzzv

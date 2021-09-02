@@ -122,4 +122,5 @@ local config            = home .. "/.config/nvim"
 vim.opt.undofile        = true                  -- actually use undo files
 vim.opt.undodir         = "/home/sam/.config/nvim/undo"   -- keep undo files out of the way
 vim.cmd("set undolevels=10000")
+
 EOF

@@ -13,6 +13,17 @@ let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
 let g:startify_enable_special = 0
 
+
+
+let bismillah = [
+        \'                                                                      ',
+        \'                                                                      ',
+        \'                        In the name of Allah,                         ',
+        \'              The Most Gracious and The Most Merciful                 ',
+        \]
+
+let g:ascii = systemlist('figlet NeoVim -f Merlin1') + bismillah
+
 " let g:ascii = [
 "         \ '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@',
 "         \ '@@@@@(,,,,,,,,,,,,,,,,@#####**@@,,,,,,,,,,,,,,,,(@@@@@',
@@ -34,36 +45,23 @@ let g:startify_enable_special = 0
 "         \ '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-Samin Yaser-@@@@',
 "         \]
 
-let g:ascii = [
-        \'                                                   ',
-        \'███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ',
-        \'████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ',
-        \'██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ',
-        \'██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ',
-        \'██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ',
-        \'╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
-        \'                                                   ',
-        \'                                                   ',
-        \'              In the name of Allah,                ',
-        \'     The Most Gracious and The Most Merciful       ',
-        \]
-
 
 " let g:ascii = [
-"         \'    M"""""""`YM                   M""MMMMM""M oo            ',
-"         \'    M  mmmm.  M                   M  MMMMM  M               ',
-"         \'    M  MMMMM  M .d8888b. .d8888b. M  MMMMP  M dP 88d8b.d8b. ',
-"         \'    M  MMMMM  M 88ooood8 88    88 M  MMMM  .M 88 88  88  88 ',
-"         \'    M  MMMMM  M 88.  ... 88.  .88 M  MMP  .MM 88 88  88  88 ',
-"         \'    M  MMMMM  M `88888P  `88888P  M      dMMM dP dP  dP  dP ',
-"         \'    MMMMMMMMMMM                   MMMMMMMMMMM               ',
-"         \'############################################################',
-"         \'############################################################',
-"         \'                                                            ',
-"         \'                                                            ',
-"         \'                   In the name of Allah,                    ',
-"         \'          The Most Gracious and The Most Merciful           ',
+"         \'                                                   ',
+"         \'███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ',
+"         \'████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ',
+"         \'██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ',
+"         \'██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ',
+"         \'██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ',
+"         \'╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
+"         \'                                                   ',
+"         \'                                                   ',
+"         \'              In the name of Allah,                ',
+"         \'     The Most Gracious and The Most Merciful       ',
 "         \]
+
+
+
 
 " let g:ascii_footer = [
 "         \'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
@@ -77,6 +75,6 @@ let g:ascii_footer = [
 let g:startify_custom_header =
    \ startify#center(g:ascii)
 
-" Centers the header
+" Centers the footer
 let g:startify_custom_footer =
    \ startify#center(g:ascii_footer)

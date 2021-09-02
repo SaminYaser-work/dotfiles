@@ -12,6 +12,8 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+
+" LSP Stuff
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -26,8 +28,10 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-surround'
 Plug 'lukesmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 Plug 'tpope/vim-commentary'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'mhinz/vim-startify'
@@ -37,7 +41,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-rooter'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'sbdchd/neoformat'
-" Plug 'romgrk/barbar.nvim'
 Plug 'rhysd/vim-grammarous'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
@@ -50,6 +53,7 @@ Plug 'tweekmonster/startuptime.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'windwp/nvim-autopairs'
 " Plug 'famiu/feline.nvim'
+Plug 'akinsho/bufferline.nvim'
 call plug#end()
 
 
@@ -59,18 +63,20 @@ call plug#end()
 
 " Basic stuff
 source ~/.config/nvim/myConfigs/settings.vim
-source ~/.config/nvim/myConfigs/themes.vim
+" source ~/.config/nvim/myConfigs/themes.vim
 source ~/.config/nvim/myConfigs/remaps.vim
 source ~/.config/nvim/myConfigs/autocmds.vim
 
 " Plugin configs
-lua require('lsp')
-lua require('treesitter')
-lua require('completion')
-lua require('nvim-colorizer')
-" lua require('barbar')
-lua require('_nvim-autopairs')
-" lua require('_feline')
+lua << EOF
+require('theme')
+require('lsp')
+require('treesitter')
+require('completion')
+require('nvim-colorizer')
+require('_nvim-autopairs')
+require('_bufferline')
+EOF
 
 
 source ~/.config/nvim/myConfigs/lspconfig.vim
