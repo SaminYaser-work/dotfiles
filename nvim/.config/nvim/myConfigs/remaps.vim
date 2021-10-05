@@ -51,9 +51,20 @@
 " Open Startify
     map <leader>S :Startify<CR>
 
-" Use tab to navigate buffers in vimwiki
-    nnoremap <C-n> :<Plug>VimwikiNextLink<CR>
-    nnoremap <C-p> :<Plug>VimwikiPrevLink<CR>
+" Rebinding due to conflict with code autocomplete
+    nnoremap <A-/> :<Plug>VimwikiNextLink<CR>
+    nnoremap <A-\> :<Plug>VimwikiPrevLink<CR>
+
+    let g:vimwiki_key_mappings =
+      \ {
+      \ 'vimwiki_<Tab>': 0,
+      \ 'vimwiki_<S-Tab>': 0,
+      \ 'table_mappings': 0,
+      \ }
+    let g:vimwiki_table_mappings = 0
+    " Disable <CR> mapping
+    inoremap <F13> <Esc>:VimwikiReturn 1 5<CR>
+
 
 " Vim surround shortcut
     map <leader>s ysiw

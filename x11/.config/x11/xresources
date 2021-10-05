@@ -2,7 +2,7 @@
 *.alpha: 0.85
 
 !! Set a default font and font size as below:
-*.font: monospace:size=10
+*.font: monospace:size=13
 
 !!Mouse cursor
 Xcursor.theme: Bibata-Modern-Amber

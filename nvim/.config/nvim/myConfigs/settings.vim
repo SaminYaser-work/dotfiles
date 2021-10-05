@@ -48,7 +48,6 @@ vim.o.mouse               = 'a'
 vim.o.hlsearch            = false         -- Set highlight on search
 vim.opt.clipboard         = 'unnamedplus' -- copy/paste to system clipboard
 vim.opt.showmatch         = true          -- highlight matching parenthesis
--- vim.opt.colorcolumn       = '80'          -- line lenght marker at 80 columns
 
 vim.opt.visualbell        = true          -- stop annoying beeping for non-error errors
 vim.opt.hidden            = true          -- allows you to hide buffers with unsaved changes without being prompted
@@ -59,11 +58,11 @@ vim.opt.pumblend          = 10            -- pseudo-transparency for popup-menu
 
 vim.opt.shiftwidth        = 4             -- spaces per tab (when shifting)
 vim.opt.tabstop           = 4             -- spaces per tab
--- vim.opt.softtabstop       = 4             -- spaces per tab
+vim.opt.softtabstop       = 4             -- spaces per tab
 vim.opt.smarttab          = true
 vim.opt.expandtab         = true          -- always use spaces instead of tabs
 
-vim.opt.swapfile          = false         -- don't create swap files
+vim.opt.swapfile          = true          -- create swap files
 vim.opt.splitbelow        = true          -- open horizontal splits below current window
 vim.opt.splitright        = true          -- open vertical splits to the right of the current window
 vim.opt.lazyredraw        = true          -- don't bother updating screen during macro playback
@@ -113,13 +112,11 @@ vim.opt.listchars     = {
     tab               = "▷⋯",                       -- WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + MIDLINE HORIZONTAL ELLIPSIS (U+22EF, UTF-8: E2 8B AF)
     trail             = "•"                         -- BULLET (U+2022, UTF-8: E2 80 A2)
 }
-vim.opt.showbreak     = '↳ '               -- DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
-vim.g.indentLine_char = '|'       -- set indentLine character
+vim.opt.showbreak     = '↳ '                        -- DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
+vim.g.indentLine_char = '|'                         -- set indentLine character
 
 
-local home              = "/home/sam"
-local config            = home .. "/.config/nvim"
-vim.opt.undofile        = true                  -- actually use undo files
+vim.opt.undofile        = true                      -- actually use undo files
 vim.opt.undodir         = "/home/sam/.config/nvim/undo"   -- keep undo files out of the way
 vim.cmd("set undolevels=10000")
 

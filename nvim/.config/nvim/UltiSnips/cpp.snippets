@@ -30,3 +30,18 @@ endsnippet
 snippet outwq "std::cout without quotes" i
 std::cout << $1 << "\n";
 endsnippet
+
+snippet fore "foreach" b
+for (auto const &item : $1) {
+
+}
+endsnippet
+
+snippet ffile "fstream file" b
+std::fstream myFile("/home/sam/test.txt", std::ios::in | std::ios::out);
+
+if (!myFile.is_open()) {
+	std::cout << "Error opening file!!!\n";
+	return 0;
+}
+endsnippet

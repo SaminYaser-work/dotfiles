@@ -110,7 +110,7 @@ map gd cd /home/sam/Documents
 map gD cd /home/sam/Downloads
 map gp cd /home/sam/Pictures
 map gv cd /home/sam/Videos
-map gl cd /home/sam/Documents/Lectures/Sem\ 6
+map gl cd /home/sam/Documents/Lectures/Sem\ 7
 map gL cd /home/sam/.local/
 map gs cd /home/sam/windows/D/Shared\ Files
 map gwp cd /home/sam/Documents/Projects/

@@ -104,7 +104,7 @@ alias pg='ping -O 8.8.8.8'
 alias pgg='gping 8.8.8.8'
 alias tp='xinput set-prop 12 207'
 alias monf='xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-1-1 --mode 1366x768 --right-of eDP-1-1'
-alias qs='quickserve ~/windows/E/Movies'
+alias qs='quickserve ~/Videos/Movies'
 alias nf='fastfetch'
 alias lf="lfrun"
 

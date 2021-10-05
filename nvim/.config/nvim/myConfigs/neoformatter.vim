@@ -11,7 +11,8 @@ let g:neoformat_enabled_csharp = ['clangformat']
 " Autoformat on save
 augroup fmt
     autocmd!
-    autocmd BufWritePre *.c,*.cpp,*.cs undojoin | Neoformat
+    autocmd BufWritePre *.c,*.cpp,*.cs Neoformat
+    " autocmd BufWritePre *.c,*.cpp,*.cs undojoin | Neoformat
 augroup END
 
 nnoremap <leader>p :Neoformat prettier<CR>

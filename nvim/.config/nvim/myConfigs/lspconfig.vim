@@ -12,15 +12,47 @@ nnoremap <silent> gn        <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> ga        <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga        <cmd>Lspsaga range_code_action<CR>
 nnoremap <silent> gs        <cmd>Lspsaga signature_help<CR>
-" Tab Complete
-inoremap <expr> <Tab>       pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab>     pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" Tab Complete
+" inoremap <expr> <Tab>       pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab>     pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <silent> <expr> <C-Space> compe#complete()
+inoremap <silent> <expr> <CR>      compe#confirm('<CR>')
+inoremap <silent> <expr> <C-e>     compe#close('<C-e>')
+inoremap <silent> <expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent> <expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
 
 
 """"""""""""""""""""""""""""""
 """"" Telescope bindings """""
 """"""""""""""""""""""""""""""
+
+
+lua << EOF
+
+-- You dont need to set any of these options. These are the default ones. Only
+-- the loading is important
+-- require('telescope').setup {
+--   extensions = {
+--     fzf = {
+--       fuzzy = true,                    -- false will only do exact matching
+--       override_generic_sorter = true,  -- override the generic sorter
+--       override_file_sorter = true,     -- override the file sorter
+--       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+--                                        -- the default case_mode is "smart_case"
+--     }
+--   }
+-- }
+
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')
+
+EOF
 
 " Builtin functions
 nnoremap <space>e <cmd>lua require'telescope.builtin'.builtin{}<CR>

@@ -17,6 +17,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'glepnir/lspsaga.nvim'
@@ -44,7 +45,7 @@ Plug 'sbdchd/neoformat'
 Plug 'rhysd/vim-grammarous'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-Plug 'thanthese/Tortoise-Typing'
+" Plug 'thanthese/Tortoise-Typing'
 Plug 'unblevable/quick-scope'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'SirVer/ultisnips'
@@ -76,6 +77,7 @@ require('completion')
 require('nvim-colorizer')
 require('_nvim-autopairs')
 require('_bufferline')
+require('compe-words')
 EOF
 
 
@@ -97,8 +99,7 @@ source ~/.config/nvim/myConfigs/neoformatter.vim
 " source ~/.config/nvim/myConfigs/coc-explorer.vim
 
 
-" @FIXME
 " Unbinding tab from UltiSnip because it interferes with coc autocompletion
     let g:UltiSnipsExpandTrigger="<A-'>"
-" let g:UltiSnipsJumpForwardTrigger="<C-space>"
-" let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+    " let g:UltiSnipsJumpForwardTrigger="<A-'>"
+    " let g:UltiSnipsJumpBackwardTrigger="<A-'>"
